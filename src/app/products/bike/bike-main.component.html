@@ -1,0 +1,14 @@
+<div class="tabContentContainer">
+
+    <h1>{{title}}</h1>
+
+    <ul>
+      <li *ngFor="let bike of bikes" (click)="onSelect(bike)">
+        {{bike.model}}
+      </li>
+    </ul>
+
+    <app-bike-info [bike]="selectedBike"></app-bike-info>
+
+
+</div>

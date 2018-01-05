@@ -1,0 +1,51 @@
+<div class="tabContentContainer">
+
+    <h4>{{pTitle}}</h4>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-7">
+                Master
+            </div>
+            <div class="col-sm-5">
+                Detail
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="col-sm-7" style="background-color:lightyellow">
+                <ul class="cars">
+                  <li *ngFor="let car of pCars; let i=index" (click)="onSelect(car)">
+                    <span class="badge">{{i+1}}</span> {{car.model}}  by  {{car.manufacturer}}
+                  </li>
+                </ul>
+            </div>
+            <div class="col-sm-5" style="background-color:blue">
+                <car-detail [car]="selectedCar"></car-detail>
+            </div>
+         </div>
+
+        <div class="row">
+             <div class="col-sm-7" style="background-color:darkcyan">
+                
+                <BR>MSG1: <input (input)="parentInput1=$event.target.value" /> (Sync)
+                <BR>MSG2: <input (input)="parentInput2=$event.target.value" /> <button (click) = "onClickToChild()">Send MSG2 to Child</button>
+                <BR>
+                <BR>
+                <selector-child   
+                    [parentInput1]="parentInput1"
+                    [parentInputClick]="parentInputClick"
+                    (sendMsgEvent) = "printMsg($event)">
+                </selector-child>
+
+                <BR>
+                Parent receives this message from Child: {{msgFromChild}} 
+            </div>
+            <div class="col-sm-5" style="background-color:grey">
+                <car-detail [car]="selectedCar"></car-detail>
+            </div>
+
+
+        </div>
+    </div>
+</div>

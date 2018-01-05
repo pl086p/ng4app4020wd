@@ -1,0 +1,11 @@
+    <h3>{{title}}</h3>
+    <h5>Boat List</h5>
+    <ul class="heroes">
+      <li *ngFor="let boat of boats"
+        [class.selected]="boat === selectedBoat"
+        (click)="onSelect(boat)">
+        <span class="badge">{{boat.id}}</span> {{boat.name}}
+      </li>
+    </ul>
+
+    <tag-boat-detail [boat]="selectedBoat"></tag-boat-detail>

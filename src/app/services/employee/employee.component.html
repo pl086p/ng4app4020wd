@@ -1,0 +1,30 @@
+    <h4>{{title}}</h4>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-3" style="background-color:lightgrey">
+                Master (List)
+            </div>
+            <div class="col-sm-6" style="background-color:lightgrey">
+                detail
+            </div>
+        </div>
+
+        <div class="row">
+             <div class="col-sm-3" style="background-color:lightyellow">
+                <ul class="employees">
+                  <li *ngFor="let employee of employees"
+                    [class.selected]="employee === selectedEmployee"
+                    (click)="onSelect(employee)">
+                    <span class="badge">{{employee.id}}</span> {{employee.name}}
+                  </li>
+                </ul>
+            </div>
+            <div class="col-sm-6" style="background-color:lightyellow">
+                <tag-employee-detail [employee]="selectedEmployee"></tag-employee-detail>
+            </div>
+
+
+        </div>
+    </div>    

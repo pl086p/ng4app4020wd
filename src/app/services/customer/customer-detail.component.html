@@ -1,0 +1,10 @@
+<div *ngIf="customer">
+      <h5>{{customer.name}} details (id: {{customer.id}})</h5>
+      <div>
+        <label>name: </label>
+        <input [(ngModel)]="customer.name" placeholder="name"  (input)="inputCustomerName=$event.target.value" />
+      </div>
+      <div>
+        <button (click)="onSaveCustomer(customer.id)">Save</button>
+      </div>
+ </div>

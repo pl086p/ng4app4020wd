@@ -1,0 +1,14 @@
+<div *ngIf="car">
+  <h5>{{car.model}} details (id: {{car.id}})</h5>
+  <div>
+    <label>model: </label> {{car.model}}
+    <input [(ngModel)]="car.model" placeholder="model" (input)="inputModel=$event.target.value" />
+  </div>
+  <div>
+    <label>Maker: </label> {{car.manufacturer}}
+    <input [(ngModel)]="car.manufacturer" placeholder="manufacturer" (input)="inputMaker=$event.target.value" />
+  </div>
+  <div>
+    <button (click) = "onClickToSave()">Save</button>
+  </div>
+</div>

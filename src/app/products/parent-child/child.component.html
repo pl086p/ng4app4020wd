@@ -1,0 +1,13 @@
+<div class="tabContentContainer">
+
+    <h4>Selector-Child</h4>
+    <div>
+        <BR>@Input Message from Parent MSG1:  {{parentInput1}}
+        <BR>@Input Message from Parent MSG2:  {{parentInputClick}}
+    </div>
+
+    <div>
+        <button (click) = "sendMsg()">@Output send message to Parent</button>
+        <input (input)="msgFromChild=$event.target.value" />
+    </div>    
+</div>

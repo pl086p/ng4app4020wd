@@ -1,0 +1,30 @@
+    <h4>{{title}}</h4>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-3" style="background-color:lightgrey">
+                Master (List)
+            </div>
+            <div class="col-sm-6" style="background-color:lightgrey">
+                detail
+            </div>
+        </div>
+
+        <div class="row">
+             <div class="col-sm-3" style="background-color:lightyellow">
+                <ul class="heroes">
+                  <li *ngFor="let customer of customers"
+                    [class.selected]="customer === selectedCustomer"
+                    (click)="onSelect(customer)">
+                    <span class="badge">{{customer.id}}</span> {{customer.name}}
+                  </li>
+                </ul>
+            </div>
+            <div class="col-sm-6" style="background-color:lightyellow">
+                <tag-customer-detail [customer]="selectedCustomer"></tag-customer-detail>
+            </div>
+
+
+        </div>
+    </div>    

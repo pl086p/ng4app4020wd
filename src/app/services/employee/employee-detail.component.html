@@ -1,0 +1,15 @@
+<div *ngIf="employee">
+      <h5>{{employee.name}} details!</h5>
+
+      <div>
+        <label>id: </label>{{employee.id}}
+      </div>
+      <div>
+        <label>name: </label>
+        <input [(ngModel)]="employee.name" placeholder="employee_name"/>
+      </div>
+      <div>
+        <label>Age: </label>
+        <input [(ngModel)]="employee.age" placeholder="age"/>
+      </div>
+ </div>
